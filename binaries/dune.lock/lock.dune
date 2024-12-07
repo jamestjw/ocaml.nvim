@@ -16,11 +16,19 @@
  (variable_values
   (with-doc false)
   (with-dev-setup false)
+  (sys-ocaml-version 5.2.0)
   (post true)
-  (os-version 14.5)
-  (os-family homebrew)
-  (os-distribution homebrew)
-  (os macos)
+  (os-version 40)
+  (os-family fedora)
+  (os-distribution fedora)
+  (os linux)
   (opam-version 2.2.0~alpha-vendored)
-  (arch arm64))
- (unset_variables with-test sys-ocaml-version sys-ocaml-libc dev build))
+  (arch x86_64))
+ (unset_variables
+  with-test
+  sys-ocaml-libc
+  sys-ocaml-cc
+  sys-ocaml-arch
+  enable-ocaml-beta-repository
+  dev
+  build))

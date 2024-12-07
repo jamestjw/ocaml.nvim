@@ -24,7 +24,8 @@ local lsp_path = vim.fs.joinpath(
   -- Base Directory
   current_path,
   -- LSP Binary
-  "binaries/_build/_private/default/.pkg/ocaml-lsp-server/target/bin/ocamllsp"
+  -- "binaries/_build/_private/default/.pkg/ocaml-lsp-server/target/bin/ocamllsp",
+  "binaries/_build/_private/default/.dev-tool/ocaml-lsp-server/ocaml-lsp-server/target/bin/ocamllsp"
 )
 
 lspconfig.util.on_setup = lspconfig.util.add_hook_before(lspconfig.util.on_setup, function(config)
@@ -54,6 +55,7 @@ lspconfig.util.on_setup = lspconfig.util.add_hook_before(lspconfig.util.on_setup
 
     -- We should be able to just use this now, since we have this installed via this plugin in the path
     config.cmd = { lsp_path }
+
     config.filetypes = filetypes
     config.get_language_id = function(bufnr, ft)
       if ft == "ocaml.mlx" then

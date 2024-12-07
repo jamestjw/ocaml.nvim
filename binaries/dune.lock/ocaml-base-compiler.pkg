@@ -5,13 +5,7 @@
 
 (build
  (progn
-  (run
-   ./configure
-   --prefix=%{prefix}
-   --docdir=%{doc}/ocaml
-   -C
-   CC=cc
-   "ASPP=cc -c")
+  (run ./configure --prefix=%{prefix} --docdir=%{doc}/ocaml -C)
   (run %{make} -j%{jobs})))
 
 (source
